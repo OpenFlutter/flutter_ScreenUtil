@@ -114,6 +114,10 @@ class _ScreenUtilInitState extends State<ScreenUtilInit> with WidgetsBindingObse
       _canMarkedToBuild.addAll(widget.responsiveWidgets!);
     }
 
+    if (widget.excludeWidgets != null) {
+      _excludedWidgets.addAll(widget.excludeWidgets!);
+    }
+
     ScreenUtil.enableScale(enableWH: widget.enableScaleWH, enableText: widget.enableScaleText);
 
     _validateSize().then(_screenSizeCompleter.complete);
